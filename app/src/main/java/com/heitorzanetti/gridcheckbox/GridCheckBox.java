@@ -24,12 +24,8 @@ public class GridCheckBox extends GridView implements AdapterView.OnItemClickLis
     private Bundle attrs = new Bundle();
     private GridCheckBoxAdapter adapter;
     private List<CheckItem> items = new ArrayList<>();
-    private OnItemSelected listener;
+    private OnGridItemSelectedListener listener;
 
-
-    public interface OnItemSelected {
-        void onSelected(int position);
-    }
 
     public GridCheckBox(Context context) {
         super(context);
@@ -118,7 +114,7 @@ public class GridCheckBox extends GridView implements AdapterView.OnItemClickLis
     }
 
 
-    public void setOnItemSelectedListener(OnItemSelected listener){
+    public void setOnItemSelectedListener(OnGridItemSelectedListener listener){
         this.listener = listener;
     }
 
@@ -152,9 +148,7 @@ public class GridCheckBox extends GridView implements AdapterView.OnItemClickLis
 
         select(i);
 
-        if (listener != null){
-            listener.onSelected(i);
-        }
+        if (listener != null) listener.onGridItemSelected(i);
 
     }
 
