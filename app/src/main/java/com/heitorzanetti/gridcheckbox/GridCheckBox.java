@@ -25,6 +25,7 @@ public class GridCheckBox extends GridView implements AdapterView.OnItemClickLis
     private GridCheckBoxAdapter adapter;
     private List<CheckItem> items = new ArrayList<>();
     private OnGridItemSelectedListener listener;
+    private OnMultipleGridItemsSelected mListener;
 
 
     public GridCheckBox(Context context) {
@@ -114,8 +115,12 @@ public class GridCheckBox extends GridView implements AdapterView.OnItemClickLis
     }
 
 
-    public void setOnItemSelectedListener(OnGridItemSelectedListener listener){
+    public void setOnGridItemSelectedListener(OnGridItemSelectedListener listener){
         this.listener = listener;
+    }
+
+    public void setOnMultipleGridItemsSelectedListener(OnMultipleGridItemsSelected mListener){
+        this.mListener = mListener;
     }
 
 
