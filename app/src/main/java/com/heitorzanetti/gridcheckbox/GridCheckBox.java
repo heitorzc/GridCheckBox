@@ -18,17 +18,13 @@ import java.util.List;
  * Created by heitorzc on 21/12/2016.
  */
 
+//TODO: Add customizations, such as: Square imageView, extended height, allow multiple selection, add attrs on xml.
 public class GridCheckBox extends GridView implements AdapterView.OnItemClickListener{
 
     private Bundle attrs = new Bundle();
     private GridCheckBoxAdapter adapter;
     private List<CheckItem> items = new ArrayList<>();
     private OnItemSelected listener;
-
-
-    public interface OnItemSelected{
-        void onSelected(int position);
-    }
 
 
     public GridCheckBox(Context context) {
@@ -118,7 +114,6 @@ public class GridCheckBox extends GridView implements AdapterView.OnItemClickLis
     }
 
 
-
     public void setOnItemSelectedListener(OnItemSelected listener){
         this.listener = listener;
     }
@@ -152,7 +147,6 @@ public class GridCheckBox extends GridView implements AdapterView.OnItemClickLis
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
         select(i);
-        Log.w("ADAPTER", "Selected index: " + i);
 
         if (listener != null){
             listener.onSelected(i);

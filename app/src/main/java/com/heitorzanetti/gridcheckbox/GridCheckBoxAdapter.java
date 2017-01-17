@@ -18,7 +18,7 @@ import java.util.List;
 /**
  * Created by heitorzc on 08/02/16.
  */
-public class GridCheckBoxAdapter extends BaseAdapter {
+class GridCheckBoxAdapter extends BaseAdapter {
 
 	private int animSpeed = 200;
 	private Bundle attrs;
@@ -42,7 +42,7 @@ public class GridCheckBoxAdapter extends BaseAdapter {
     }
 
 
-	public GridCheckBoxAdapter(Context context, Bundle attrs) {
+	GridCheckBoxAdapter(Context context, Bundle attrs) {
 		mInflater = LayoutInflater.from(context);
 		this.context = context;
 		this.attrs = attrs;
@@ -117,6 +117,8 @@ public class GridCheckBoxAdapter extends BaseAdapter {
 	private void setAttrs(){
 		holder.tvDescription.setTextSize(attrs.getInt("textSize"));
 		holder.tvDescription.setGravity(attrs.getInt("textGravity"));
+
+		//TODO: Handle deprecation
 		holder.tvDescription.setTextColor(context.getResources().getColor(attrs.getInt("textColor")));
 		holder.ivIndicator.setImageDrawable(context.getResources().getDrawable(attrs.getInt("checkDrawable")));
 	}
