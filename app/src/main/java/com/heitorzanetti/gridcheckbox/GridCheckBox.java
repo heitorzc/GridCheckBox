@@ -27,6 +27,10 @@ public class GridCheckBox extends GridView implements AdapterView.OnItemClickLis
     private OnItemSelected listener;
 
 
+    public interface OnItemSelected {
+        void onSelected(int position);
+    }
+
     public GridCheckBox(Context context) {
         super(context);
         inflateView(context);
